@@ -35,7 +35,7 @@ const page = () => {
           </form>
         </div>
 
-        <div className="text-center mb-4">
+        <div className="text-center mb-3">
           <h4 className="text-[#00002280]">OR</h4>
         </div>
 

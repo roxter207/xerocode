@@ -22,11 +22,11 @@ const page = () => {
             
             <input
               className="w-full h-[35px]  mb-4 border rounded pl-5 outline-none font-light"
-              placeholder="Email ID"
+              placeholder="Email ID" type="email"
             />
             <input
               className="w-full h-[35px]  mb-4 border rounded pl-5 outline-none font-light"
-              placeholder="Password"
+              placeholder="Password" type="password"
             />
            
             <button className="bg-[#1F64FF] w-full h-[40px] text-center text-white rounded-md">

@@ -42,13 +42,13 @@ const page = () => {
         <div className="grid grid-cols-2 mb-8">
           <div className="mr-2">
             <button className="flex items-center border rounded-md w-full space-x-2 pl-5 h-[50px]">
-              <div>Sign Up With GOOGLE</div>
+              <div>Sign Up With Google</div>
               <Image src="/image1.png" alt="github" width={34} height={34} />
             </button>
           </div>
           <div className="ml-2">
             <button className="flex items-center border rounded-md w-full space-x-2 pl-5 h-[50px]">
-              <div>Sign Up With GITHUB</div>
+              <div>Sign Up With Github</div>
               <Image src="/image2.png" alt="github" width={34} height={34} />
             </button>
           </div>

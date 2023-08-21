@@ -3,6 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
+
+
 
 const page = () => {
   return (
@@ -53,12 +56,12 @@ const page = () => {
 
         <div className="grid grid-cols-2 mb-4">
           <div className="mr-2">
-            <button className="flex items-center border rounded-md w-full space-x-2 pl-5 h-[50px]">
+            <button className="flex items-center border rounded-md w-full space-x-2 pl-5 h-[50px]" onClick={()=>signIn("googles")}>
               <div>Sign Up With Google</div>
               <Image src="/image1.png" alt="github" width={34} height={34} />
             </button>
           </div>
-          <div className="ml-2">
+          <div className="ml-2" >
             <button className="flex items-center border rounded-md w-full space-x-2 pl-5 h-[50px]">
               <div>Sign Up With Github</div>
               <Image src="/image2.png" alt="github" width={34} height={34} />

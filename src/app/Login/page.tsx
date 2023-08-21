@@ -9,30 +9,20 @@ import HomePage from "../home";
 
 const page = () => {
 
- // const{data:session} = useSession();
+ 
 
   //google handle
-  async function handleGoogleSignin(){
+  async function handleGoogleSignIn(){
     console.log("click hogaya")
     signIn('google', {callbackUrl:"http://localhost"})
     console.log("kuch galat hua")
   }
 
+  //github signin
+  async function handleGithubSignIn() {
+    signIn("github",{callbackUrl:"http://localhost"})
+  }
 
-
-//if user exists-> show signout button
-  // if(session){
-  //   return(
-  //     <div>
-  //       <button onClick={()=>signOut()}>
-  //         Sign Out (from login page)
-  //       </button>
-  //       <HomePage user={session?.user}/>
-  //     </div>
-  //   )
-
-  // }
-  // else{
     return (
       <div className="bg-white w-full h-[100vh]  flex-col text-black grid grid-cols-2 ">
         <div className="flex-row justify-center p-10 ">
@@ -71,13 +61,13 @@ const page = () => {
   
           <div className="grid grid-cols-2 mb-8">
             <div className="mr-2">
-              <button className="flex items-center border rounded-md w-full space-x-2 pl-5 h-[50px]" onClick={handleGoogleSignin}>
+              <button className="flex items-center border rounded-md w-full space-x-2 pl-5 h-[50px]" onClick={handleGoogleSignIn}>
                 <div>Login With Google</div>
                 <Image src="/image1.png" alt="github" width={34} height={34} />
               </button>
             </div>
             <div className="ml-2">
-              <button className="flex items-center border rounded-md w-full space-x-2 pl-5 h-[50px]">
+              <button className="flex items-center border rounded-md w-full space-x-2 pl-5 h-[50px]" onClick={handleGithubSignIn}>
                 <div>Login With Github</div>
                 <Image src="/image2.png" alt="github" width={34} height={34} />
               </button>
@@ -107,9 +97,6 @@ const page = () => {
     );
   }
 
-
- 
-//  };
 
 export default page;
 

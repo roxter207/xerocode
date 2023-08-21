@@ -18,7 +18,14 @@ const page = () => {
   });
 
   async function onSubmit(values: any) {
-    console.log(values);
+    const status = await signIn('credentials',{
+      redirect:false,
+      email:values.email,
+      password: values.password,
+      callbackUrl:"/"
+    })
+
+    console.log(status);
   }
 
   //google handle

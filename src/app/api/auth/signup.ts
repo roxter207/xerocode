@@ -3,7 +3,7 @@ import Users from "../../../../model/Schema";
 import { hash } from "bcryptjs";
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(req : NextApiRequest, res:NextApiResponse){
+export default async function handlers(req : NextApiRequest, res:NextApiResponse){
     connectMongo().catch(error => res.json({error:"Connnection failed..!"}))
 
     if(req.method == "POST"){

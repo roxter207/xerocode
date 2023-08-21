@@ -5,33 +5,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { signIn, signOut } from "next-auth/react";
 import { Formik, useFormik } from "formik";
-
-
-// interface MyFormValues {
-//   email: string;
-//   password: string
-// }
+import login_validate from "@/lib/validate";
 
 const page = () => {
-
-
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password:'',
+      email: "",
+      password: "",
     },
-    onSubmit
+    validate: login_validate,
+    onSubmit,
   });
 
-  async function onSubmit(values:any){
+  async function onSubmit(values: any) {
     console.log(values);
   }
 
   //google handle
   async function handleGoogleSignIn() {
-    console.log("click hogaya");
     signIn("google", { callbackUrl: "http://localhost" });
-    console.log("kuch galat hua");
   }
 
   //github signin
@@ -54,23 +46,34 @@ const page = () => {
           <div className=" h-1 border-t-2 rounded border-[#AAB2C873] border-opacity-40"></div>
         </div>
         <div className="flex flex-row mb-4">
-          <form className="w-full p-10" method="POST" onSubmit={formik.handleSubmit}>
+          <form
+            className="w-full p-10"
+            method="POST"
+            onSubmit={formik.handleSubmit}
+          >
             <input
-              className="w-full h-[35px]  mb-4 border rounded pl-5 outline-none font-light"
+              className="w-full h-[35px]  mb-4 border rounded pl-5 outline-none font-light text-black"
               placeholder="Email ID"
               type="email"
-              onChange={formik.handleChange}
-              value={formik.values.email}
+              {...formik.getFieldProps("email")}
             />
+            {formik.errors.email && formik.touched.email ? <span className="font-light text-red-600 -mt-1">{formik.errors.email}</span> : <></>}
             <input
               className="w-full h-[35px]  mb-4 border rounded pl-5 outline-none font-light"
               placeholder="Password"
               type="password"
-              onChange={formik.handleChange}
-              value={formik.values.password}
+              {...formik.getFieldProps("password")}
             />
+            {formik.errors.password && formik.touched.password ? (
+              <span className="font-light text-red-600 ">{formik.errors.password}</span>
+            ) : (
+              <></>
+            )}
 
-            <button className="bg-[#1F64FF] w-full h-[40px] text-center text-white rounded-md" >
+            <button
+              className="bg-[#1F64FF] w-full h-[40px] text-center text-white rounded-md"
+              type="submit"
+            >
               LOGIN
             </button>
           </form>

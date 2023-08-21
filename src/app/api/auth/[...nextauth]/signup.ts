@@ -1,5 +1,5 @@
 import { error } from "console";
-import connectMongo from "../../../../../database/conn";
+import connectMongo from "../../../../lib/conn";
 import Users from "../../../../../model/Schema";
 import {hash} from "bcryptjs"
 

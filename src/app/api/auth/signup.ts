@@ -1,10 +1,11 @@
 import { error } from "console";
-import connectMongo from "../../../../lib/conn";
-import Users from "../../../../../model/Schema";
+import connectMongo from "../../../lib/conn";
+import Users from "../../../../model/Schema";
 import {hash} from "bcryptjs"
+import { NextApiRequest, NextApiResponse } from "next";
 
 
-export default async function handler(res : any, req:any){
+export default async function handler(req : NextApiRequest, res:NextApiResponse){
     connectMongo().catch(error => res.json({error:"Connnection failed..!"}))
 
 

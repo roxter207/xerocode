@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const Userinfo = ({ user }: { user: DefaultSession["user"] }) => {
+  
   async function handleGoogleSignOut() {
     signOut({ callbackUrl: "http://localhost:3000/login" });
   }

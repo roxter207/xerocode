@@ -9,7 +9,7 @@ import { useState } from "react";
 const Userinfo = ({ user }: { user: DefaultSession["user"] }) => {
   
   async function handleGoogleSignOut() {
-    signOut({ callbackUrl: "http://localhost:3000/login" });
+    signOut({ callbackUrl: "http://localhost:3000" });
   }
   const [selectedOption, setSelectedOption] = useState("");
   const [inputValue, setInputValue] = useState("");

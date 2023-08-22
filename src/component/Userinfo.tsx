@@ -29,14 +29,15 @@
 //           </div>
 //           <div className=" h-1 border-t-2 rounded border-[#AAB2C873] border-opacity-40"></div>
 //         </div>
+//         <div className="flex space-x-10">
+//           <button>Developer</button>
+//         </div>
 //       </div>
-      
 //     </>
 //   );
 // };
 
 // export default Userinfo;
-
 
 import React, { useState } from "react";
 import { DefaultSession } from "next-auth";
@@ -85,7 +86,7 @@ const Userinfo = ({ user }: { user: DefaultSession["user"] }) => {
       <div className="flex justify-center space-x-4">
         <button
           className={`border py-2 px-4 rounded-lg ${
-            selectedOption === "developer" ? "bg-blue-500 text-white" : "bg-transparent"
+            selectedOption === "developer" ? "bg-blue-500 text-black" : "bg-transparent"
           }`}
           onClick={() => handleOptionClick("developer")}
         >
@@ -93,7 +94,7 @@ const Userinfo = ({ user }: { user: DefaultSession["user"] }) => {
         </button>
         <button
           className={`border py-2 px-4 rounded-lg ${
-            selectedOption === "organization" ? "bg-blue-500 text-white" : "bg-transparent"
+            selectedOption === "organization" ? "bg-blue-500 text-black" : "bg-transparent"
           }`}
           onClick={() => handleOptionClick("organization")}
         >
@@ -101,7 +102,7 @@ const Userinfo = ({ user }: { user: DefaultSession["user"] }) => {
         </button>
         <button
           className={`border py-2 px-4 rounded-lg ${
-            selectedOption === "company" ? "bg-blue-500 text-white" : "bg-transparent"
+            selectedOption === "company" ? "bg-blue-500 text-black" : "bg-transparent"
           }`}
           onClick={() => handleOptionClick("company")}
         >
@@ -118,7 +119,7 @@ const Userinfo = ({ user }: { user: DefaultSession["user"] }) => {
             onChange={handleInputChange}
           />
           <button
-            className="mt-2 bg-blue-500 text-white py-1 px-4 rounded-md hover:bg-blue-600"
+            className="mt-2 bg-blue-500 text-black py-1 px-4 rounded-md hover:bg-blue-600"
             onClick={handleSubmit}
           >
             Submit
@@ -126,7 +127,7 @@ const Userinfo = ({ user }: { user: DefaultSession["user"] }) => {
         </div>
       )}
       <button
-        className="mt-4 bg-red-500 text-white py-1 px-4 rounded-md hover:bg-red-600"
+        className="mt-4 bg-red-500 text-black py-1 px-4 rounded-md hover:bg-red-600"
         onClick={handleGoogleSignOut}
       >
         Sign Out

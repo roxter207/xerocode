@@ -1,27 +1,47 @@
-import React from 'react'
-import { useState } from 'react';
+"use client";
 
-const Serverpage = () => {
-    const [selectedOption, setSelectedOption] = useState("");
-    const [inputValue, setInputValue] = useState("");
-    const [showInput, setShowInput] = useState(false);
-  
-    const handleOptionClick = (option: string) => {
-      setSelectedOption(option);
-      setInputValue("");
-      setShowInput(true);
-    };
-  
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setInputValue(e.target.value);
-    };
-  
-    const handleSubmit = () => {
-      // Handle submission of the input value
-      
-    };
-  
-    return (
+import Userinfo from "@/component/Userinfo";
+import React from "react";
+import { useState } from "react";
+import { DefaultSession } from "next-auth";
+import Image from "next/image";
+
+const Serverpage = ({ user }: { user: DefaultSession["user"] }) => {
+  const [selectedOption, setSelectedOption] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [showInput, setShowInput] = useState(false);
+
+  const handleOptionClick = (option: string) => {
+    setSelectedOption(option);
+    setInputValue("");
+    setShowInput(true);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    // Handle submission of the input value
+  };
+
+  return (
+    <>
+      <div className="bg-white flex-col justify-center align-content:center w-full h-[100vh] space-y-2 text-black">
+        <div className="flex content-center">
+          <Image src="/logo.png" alt="logo" width="150" height="1" />
+        </div>
+        <h1 className="text-center font-bold text-2xl pt-5">
+          Welcome <span>{user?.name}</span>
+        </h1>
+        <div className="grid grid-cols-3 pt-5 items-end mb-6 w-[759.5px] m-auto ">
+          <div className="h-1 border-t-2 rounded border-[#AAB2C873] border-opacity-40"></div>
+          <div className="text-center text-lg font-light">
+            Choose from the Following
+          </div>
+          <div className="h-1 border-t-2 rounded border-[#AAB2C873] border-opacity-40"></div>
+        </div>
+      </div>
       <div>
         <div className="grid grid-cols-3 pt-5 items-end mb-6 w-[759.5px] m-auto ">
           <div className="h-1 border-t-2 rounded border-[#AAB2C873] border-opacity-40"></div>
@@ -46,7 +66,7 @@ const Serverpage = () => {
           >
             Aws
           </button>
-         
+
           <button
             style={{
               width: 150,
@@ -55,8 +75,11 @@ const Serverpage = () => {
               borderRadius: 5,
               border: "1px solid",
               backgroundColor:
-                selectedOption === "Github Repository " ? "blue" : "transparent",
-              color: selectedOption === "Github Repository " ? "white" : "black",
+                selectedOption === "Github Repository "
+                  ? "blue"
+                  : "transparent",
+              color:
+                selectedOption === "Github Repository " ? "white" : "black",
             }}
             onClick={() => handleOptionClick("Github Repository ")}
           >
@@ -89,7 +112,8 @@ const Serverpage = () => {
           </div>
         )}
       </div>
-    );
-}
+    </>
+  );
+};
 
-export default Serverpage
+export default Serverpage;

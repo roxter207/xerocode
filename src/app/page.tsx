@@ -2,7 +2,7 @@
 
 import Userinfo from '@/component/Userinfo'
 import { useSession } from 'next-auth/react'
-import Image from 'next/image'
+
 
 
 

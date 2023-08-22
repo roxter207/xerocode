@@ -35,7 +35,7 @@ const page = () => {
     .then(res=>res.json())
     .then((data)=>{
       if(data){
-        router.push('http://localhost:3000/login');
+        router.push('http://localhost:3000');
       }
     })
   }
@@ -135,7 +135,7 @@ const page = () => {
           Already have an Account?{" "}
           <span className="text-[#1F64FF]">
             {" "}
-            <Link href="/login">LOGIN</Link>
+            <Link href="/">LOGIN</Link>
           </span>
         </h4>
       </div>

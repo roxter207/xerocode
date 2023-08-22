@@ -1,3 +1,5 @@
+"use client"
+
 import Userinfo from "@/component/Userinfo";
 import React from "react";
 import { useSession } from "next-auth/react";

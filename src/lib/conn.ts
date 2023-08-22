@@ -9,5 +9,5 @@ const connectMongo = async () => {
   }
 };
 
-export default connectMongo
+export default connectMongo;
 

@@ -30,12 +30,12 @@ const page = () => {
 
   //google handle
   async function handleGoogleSignIn() {
-    signIn("google", { callbackUrl: "http://localhost" });
+    signIn("google", { callbackUrl: "http://localhost:3000" });
   }
 
   //github signin
   async function handleGithubSignIn() {
-    signIn("github", { callbackUrl: "http://localhost" });
+    signIn("github", { callbackUrl: "http://localhost:3000" });
   }
 
   return (

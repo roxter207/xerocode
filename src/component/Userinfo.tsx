@@ -31,11 +31,11 @@ const Userinfo = ({ user }: { user: DefaultSession["user"] }) => {
   return (
     <>
       <div className="bg-white flex-col justify-center align-content:center w-full h-[100vh] space-y-2 text-black">
-        <div className="flex justify-center">
-          <div className="basis-1/2">
+        <div className="flex flex-1 justify-center">
+          <div style={{display:'flex',flex:1,justifyContent:'end',marginLeft:150}}>
             <Image src="/logo.png" alt="logo" width="150" height="1" />
           </div>
-          <div className="basis-1/4 justify-end">
+          <div style={{display:'flex',flex:1,justifyContent:'end'}}>
             {user && (
               <button
                 className="mt-4 bg-red-500 text-black py-1 px-4 rounded-md hover:bg-red-600"

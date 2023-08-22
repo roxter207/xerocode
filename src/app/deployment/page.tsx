@@ -43,7 +43,7 @@ const Deployment = ({ user }: { user: DefaultSession["user"] }) => {
           >
             Self Hosting
           </button>
-          <Link href="/serverpage">
+          <Link href="/awsgit">
           <button
             style={{
               width: 250,

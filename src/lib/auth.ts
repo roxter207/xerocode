@@ -23,6 +23,7 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
+        name: { label: "name", type: "text" },
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" }
       },
@@ -46,7 +47,8 @@ export const authOptions: NextAuthOptions = {
         if (!checkPassword || result.email !== credentials.email) {
           throw new Error("Username or Password doesn't match");
         }
-        return result;
+       // return result;
+       return { ...result.toObject(), name: credentials.name };
       },
       
     }),

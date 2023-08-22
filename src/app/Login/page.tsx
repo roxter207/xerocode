@@ -25,7 +25,7 @@ const page = () => {
       redirect:false,
       email:values.email,
       password: values.password,
-      callbackUrl:"http://localhost:3000"
+      callbackUrl:"http://localhost:3000/landing"
     })
 
     if(status.ok ){

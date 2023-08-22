@@ -6,8 +6,11 @@ import Link from "next/link";
 import { signIn, signOut } from "next-auth/react";
 import { Formik, useFormik } from "formik";
 import login_validate from "@/lib/validate";
+import { useRouter } from "next/navigation";
 
 const page = () => {
+
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -18,14 +21,16 @@ const page = () => {
   });
 
   async function onSubmit(values: any) {
-    const status = await signIn('credentials',{
+    const status :any = await signIn('credentials',{
       redirect:false,
       email:values.email,
       password: values.password,
-      callbackUrl:"/"
+      callbackUrl:"http://localhost:3000"
     })
 
-    console.log(status);
+    if(status.ok ){
+      router.push(status.url)
+    }
   }
 
   //google handle

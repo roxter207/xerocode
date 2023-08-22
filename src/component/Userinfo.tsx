@@ -3,12 +3,10 @@ import { DefaultSession } from "next-auth";
 import { signOut } from "next-auth/react";
 
 const Userinfo = ({ user }: { user: DefaultSession["user"] }) => {
-    async function handleGoogleSignOut(){
-        console.log("click hogaya")
-        signOut({ callbackUrl: 'http://localhost:3000/login' })
-        console.log("kuch galat hua")
-      }
-    
+  async function handleGoogleSignOut() {
+    signOut({ callbackUrl: "http://localhost:3000/login" });
+  }
+
   return (
     <>
       <div>Userinfo: {user?.name}</div>

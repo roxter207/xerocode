@@ -6,10 +6,13 @@ import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useFormik } from "formik";
 import { register_validate } from "@/lib/validate";
+import { useRouter } from "next/navigation";
 
 
 
 const page = () => {
+
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       firstname: "",
@@ -23,7 +26,18 @@ const page = () => {
   });
 
   async function onSubmit(values: any) {
-    console.log(values);
+    const options = {
+      method: "POST",
+      headers: {'Content-type':'application/json'},
+      body:JSON.stringify(values)
+    }
+    await fetch("http://localhost:3000/api/user",options)
+    .then(res=>res.json())
+    .then((data)=>{
+      if(data){
+        router.push('http://localhost:3000/login');
+      }
+    })
   }
 
   return (

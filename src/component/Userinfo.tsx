@@ -38,7 +38,7 @@ const Userinfo = ({ user }: { user: DefaultSession["user"] }) => {
           <div style={{display:'flex',flex:1,justifyContent:'end'}}>
             {user && (
               <button
-                className="mt-4 bg-red-500 text-black py-1 px-4 rounded-md hover:bg-red-600"
+                style={{background:'blue',marginTop:5,marginRight:20, padding:5, border:'1px solid blue',borderRadius:5,color:'whitesmoke'}}
                 onClick={handleGoogleSignOut}
               >
                 Sign Out

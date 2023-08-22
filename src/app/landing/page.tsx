@@ -4,10 +4,10 @@ import Userinfo from "@/component/Userinfo";
 import React from "react";
 import { useSession } from "next-auth/react";
 
-const page = () => {
+const login = () => {
   const { data: session } = useSession();
 
   return <Userinfo user={session?.user} />;
 };
 
-export default page;
+export default login;

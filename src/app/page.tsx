@@ -25,7 +25,7 @@ const Login = () => {
       redirect:false,
       email:values.email,
       password: values.password,
-      callbackUrl:"http://localhost:3000/landing"
+      callbackUrl:"https://xerocode-two.vercel.app/landing"
     })
 
     if(status.ok ){
@@ -35,12 +35,12 @@ const Login = () => {
 
   //google handle
   async function handleGoogleSignIn() {
-    signIn("google", { callbackUrl: "http://localhost:3000/landing" });
+    signIn("google", { callbackUrl: "https://xerocode-two.vercel.app/" });
   }
 
   //github signin
   async function handleGithubSignIn() {
-    signIn("github", { callbackUrl: "http://localhost:3000/landing" });
+    signIn("github", { callbackUrl: "https://xerocode-two.vercel.app/" });
   }
 
   return (

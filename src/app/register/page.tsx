@@ -31,11 +31,11 @@ const Page = () => {
       headers: {'Content-type':'application/json'},
       body:JSON.stringify(values)
     }
-    await fetch("http://localhost:3000/api/user",options)
+    await fetch("https://xerocode-two.vercel.app//api/user",options)
     .then(res=>res.json())
     .then((data)=>{
       if(data){
-        router.push('http://localhost:3000');
+        router.push('https://xerocode-two.vercel.app/');
       }
     })
   }

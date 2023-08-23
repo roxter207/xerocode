@@ -4,10 +4,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { DefaultSession } from "next-auth";
 import Link from "next/link";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const Deployment = ({ user }: { user: DefaultSession["user"] }) => {
 
+  const { data: session } = useSession();
   
   async function handleGoogleSignOut() {
     signOut({ callbackUrl: "http://localhost:3000/login" });

@@ -2,13 +2,11 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { DefaultSession } from "next-auth";
 import Link from "next/link";
-import { signOut, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 
-const Deployment = ({ user }: { user: DefaultSession["user"] }) => {
+const Deployment = () => {
 
-  const { data: session } = useSession();
   
   async function handleGoogleSignOut() {
     signOut({ callbackUrl: "http://localhost:3000/login" });
@@ -35,26 +33,11 @@ const Deployment = ({ user }: { user: DefaultSession["user"] }) => {
             <Image src="/logo.png" alt="logo" width="150" height="1" />
           </div>
           <div style={{ display: "flex", flex: 1, justifyContent: "end" }}>
-            {user && (
-              <button
-                style={{
-                  background: "blue",
-                  marginTop: 5,
-                  marginRight: 20,
-                  padding: 5,
-                  border: "1px solid blue",
-                  borderRadius: 5,
-                  color: "whitesmoke",
-                }}
-                onClick={handleGoogleSignOut}
-              >
-                Sign Out
-              </button>
-            )}
+            
           </div>
         </div>
         <h1 className="text-center font-bold text-2xl pt-5">
-          Welcome <span>{user?.name}</span>
+          Welcome 
         </h1>
 
       <div className="grid grid-cols-3 pt-5 items-end mb-6 w-[1000px] m-auto ">

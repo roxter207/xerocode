@@ -42,6 +42,7 @@ const Awsgit = () => {
           >
             <Image src="/logo.png" alt="logo" width="150" height="1" />
           </div>
+          <div className="flex flex-1 justify-center"></div>
           
         </div>
         <h1 className="text-center font-bold text-2xl pt-5">

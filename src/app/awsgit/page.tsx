@@ -2,14 +2,11 @@
 
 import React from "react";
 import { useState } from "react";
-import { DefaultSession } from "next-auth";
 import Image from "next/image";
 import { signOut } from "next-auth/react";
 
+const Awsgit = () => {
 
-
-
-const Awsgit = ({ user }: { user: DefaultSession["user"] }) => {
   async function handleGoogleSignOut() {
     signOut({ callbackUrl: "http://localhost:3000/login" });
   }
@@ -45,27 +42,10 @@ const Awsgit = ({ user }: { user: DefaultSession["user"] }) => {
           >
             <Image src="/logo.png" alt="logo" width="150" height="1" />
           </div>
-          <div style={{ display: "flex", flex: 1, justifyContent: "end" }}>
-            {user && (
-              <button
-                style={{
-                  background: "blue",
-                  marginTop: 5,
-                  marginRight: 20,
-                  padding: 5,
-                  border: "1px solid blue",
-                  borderRadius: 5,
-                  color: "whitesmoke",
-                }}
-                onClick={handleGoogleSignOut}
-              >
-                Sign Out
-              </button>
-            )}
-          </div>
+          
         </div>
         <h1 className="text-center font-bold text-2xl pt-5">
-          Welcome <span>{user?.name}</span>
+          Welcome
         </h1>
 
         <div>

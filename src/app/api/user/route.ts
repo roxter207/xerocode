@@ -1,24 +1,3 @@
-// import connectMongo from "@/lib/conn";
-// import Users from "../../../../model/Schema";
-// import { NextResponse } from "next/server";
-// import { Hash } from "crypto";
-
-// export async function POST(request:any){
-//     const {firstname,lastname,email,password} = await request.json();
-
-//     await connectMongo();
-
-//     await Users.create({firstname,lastname,email,password});
-//     return NextResponse.json({message:"User registered"},{status:201});
-
-// }
-
-// import connectMongo from "@/lib/conn";
-
-// export default async function handler(req:any, res:any){
-
-// }
-
 import connectMongo from "@/lib/conn";
 import Users from "../../../../model/Schema";
 import { NextResponse } from "next/server";
@@ -54,7 +33,7 @@ export async function POST(request: any) {
     await Users.create({ firstname, lastname, email, password: hashpassword });
     const users = await Users.find({},{password:0});
     return NextResponse.json(users,{status:400})
-    //return NextResponse.json({ message: "User registered" }, { status: 201 });
+   
 
     
     

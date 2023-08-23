@@ -5,7 +5,11 @@ import { useState } from "react";
 import { DefaultSession } from "next-auth";
 import Image from "next/image";
 import { signOut } from "next-auth/react";
-const Serverpage = ({ user }: { user: DefaultSession["user"] }) => {
+
+
+
+
+const Awsgit = ({ user }: { user: DefaultSession["user"] }) => {
   async function handleGoogleSignOut() {
     signOut({ callbackUrl: "http://localhost:3000/login" });
   }
@@ -139,4 +143,4 @@ const Serverpage = ({ user }: { user: DefaultSession["user"] }) => {
   );
 };
 
-export default Serverpage;
+export default Awsgit;
